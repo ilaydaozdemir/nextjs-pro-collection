@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { categories } from "../data/products";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer>
       <div className="bg-[#003d5b] py-16">
@@ -69,6 +71,130 @@ export default function Footer() {
                   </a>
                 )
               )}
+            </div>
+          </div>
+          <div className="col-span-1 md:col-span-2">
+            <h3 className="text[#003d5b] font-bold mb-4 text-lg">Categories</h3>
+            <ul className="space-y-2.5">
+              {categories.slice(0, 5).map((category) => (
+                <li key={category.slug}>
+                  <Link
+                    href="/products"
+                    className="text-gray-600 hover:text-[#00798c] hover:translate-x-1 inline-flex items-center transition-all"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#edea49] opacity-70 mr-2 inline-block"></span>
+                    {category.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/products"
+                  className="text-[#00798c] hover:text-[#003d5b] font-medium hover:translate-x-1 inline-flex items-center transition-all group"
+                >
+                  View All
+                  <i className="bx bx-right-arrow-alt ml-1 opacity-70 group-hover:translate-x-1 transition-transform"></i>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="col-span-1 md:col-span-2">
+            <h3 className="text-[#003d5b] font-bold mb-4 text-lg">Shop</h3>
+            <ul className="space-y-2.5">
+              {[
+                "All Products",
+                "New Arrivals",
+                "Best Sellers",
+                "Deals",
+                "Gift",
+                "Cards",
+              ].map((item) => (
+                <li key={item}>
+                  <a
+                    href="/products"
+                    className="text-gray-600 hover:text-[#00798c] hover:translate-x-1 inline-block  transition-all"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="col-span-1 md:col-span-2">
+            <h3 className="text-[#003d5b] font-bold mb-4 text-lg">Support</h3>
+            <ul className="space-y-2.5">
+              {["Contact us", "FAQs", "Shipping", "Returns", "Track Order"].map(
+                (item) => (
+                  <li key={item}>
+                    <a
+                      href="/products"
+                      className="text-gray-600 hover:text-[#00798c] hover:translate-x-1 inline-block  transition-all"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+          <div className="col-span-1 md:col-span-2">
+            <h3 className="text-[#003d5b] font-bold mb-4 text-lg">Company</h3>
+            <ul className="space-y-2.5">
+              {["About Us", "Blog", "Careers", "Press", "Privacy Policy"].map(
+                (item) => (
+                  <li key={item}>
+                    <a
+                      href="/products"
+                      className="text-gray-600 hover:text-[#00798c] hover:translate-x-1 inline-block  transition-all"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-gray-200">
+        <div className="max-w-7xl mx-auto p-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-gray-500 text-sm mb-4 md:mb-0">
+              &copy;{currentYear} StoreBrand. All rights reserved.
+            </div>
+            <div className="flex items-center">
+              <div className="hidden sm:flex items-center mr-6 space-x-3">
+                {["Visa", "MasterCard", "PayPal", "Apple"].map((method) => (
+                  <div className="text-gray-400" key={method}>
+                    <i
+                      className={`bx bxl-${method.toLocaleLowerCase()} text-xl`}
+                    ></i>
+                  </div>
+                ))}
+              </div>
+              <div className="flex space-x-4 items-center">
+                <a
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-[#003d5b]"
+                >
+                  Terms
+                </a>
+                <span className="w-1 h-1 rounded-full bg-gray-300"></span>
+                <a
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-[#003d5b]"
+                >
+                  Privacy
+                </a>
+                <span className="w-1 h-1 rounded-full bg-gray-300"></span>
+                <a
+                  href="#"
+                  className="text-sm text-gray-500 hover:text-[#003d5b]"
+                >
+                  Cookies
+                </a>
+                <span className="w-1 h-1 rounded-full bg-gray-300"></span>
+              </div>
             </div>
           </div>
         </div>
