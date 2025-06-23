@@ -26,9 +26,36 @@ export default function ProductsPage() {
                 sizes="(max-width:768px) 100vw,(max-width:1200px) 50vw,25vw"
                 className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
               />
+              <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent"></div>
+            </div>
+            <div className="p-6">
+              <h3
+                className="text-xl font-bold mb-2 text-[#003d5b] group-hover:text-[#00798c] transition-colors"
+                style={{ color: category.color }}
+              >
+                {category.name}
+              </h3>
+              <p className="text-sm text-[#30638e] mb-4">
+                {category.description}
+              </p>
+              <div
+                className="flex justify-end items-center text-sm font-medium transition-colors"
+                style={{ color: category.color }}
+              >
+                <span className="mr-1">View Products</span>
+                <i className="bx bx-chevron-right text-xl transform group-hover:translate-0-x-1 transition-transform"></i>
+              </div>
             </div>
           </Link>
         ))}
+      </div>
+      <div className="mt-12 pt-6 border-t border-gray-200">
+        <Link
+          href="/"
+          className="inline-flex items-center text-[#00798c] hover:text-[#003d5b] transition-colors"
+        >
+          <i className="bx bx-arrow-back mr-2">Back to Home</i>
+        </Link>
       </div>
     </div>
   );
