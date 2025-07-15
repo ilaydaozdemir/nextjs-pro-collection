@@ -1,4 +1,5 @@
-import { Product, productsList, categories } from "@/app/data/products";
+import { categories } from "@/app/data/products";
+import Link from "next/link";
 export default async function CategoryPage({
   params,
 }: {
@@ -18,6 +19,19 @@ export default async function CategoryPage({
             designed for exceptional performance
           </p>
         </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div>Products Card</div>
+      </div>
+      <div className="mt-12 pt-6 border-t border-gray-200">
+        <Link
+          href="/products"
+          className="inline-flex items-center text-[#00798c] hover:text-[#003d5b] transition-colors"
+        >
+          <i className="bx bx-left-arrow-alt mr-2 text-xl">
+            Back to All Categories
+          </i>
+        </Link>
       </div>
     </div>
   );
