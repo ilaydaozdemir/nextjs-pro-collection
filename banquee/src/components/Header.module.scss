@@ -1,0 +1,70 @@
+.headerContainer {
+  min-height: 91px;
+  background-color: white;
+}
+.container {
+  background-color: white;
+  padding: 24px 140px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+.navLeft {
+  color: #5bb5a2;
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: -0.03em;
+  font-family: var(--font-dmSans);
+}
+.navCenter {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  font-family: var(--font-inter);
+}
+.navCenter a {
+  text-decoration: none;
+}
+.navitem {
+  padding: 8px 8px 8px 12px;
+  color: #1a191e;
+  background-color: white;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.icon {
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 4px;
+}
+.active {
+  background-color: #f8f8f8;
+  border-radius: 6px;
+  padding: 8px 8px 8px 12px;
+  color: #1a191e;
+}
+.navRight {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 32px;
+}
+.login {
+  font-weight: 400;
+  font-size: 18px;
+  color: #5bb5a2;
+  border: none;
+  background-color: white;
+  letter-spacing: -0.03em;
+}
+.openAccount {
+  padding: 12px 16px;
+  border-radius: 6px;
+  background-color: #5bb5a2;
+  color: white;
+  border: 1px solid #1a191e;
+}
