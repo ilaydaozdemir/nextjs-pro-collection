@@ -68,3 +68,26 @@
   color: white;
   border: 1px solid #1a191e;
 }
+.sidebarContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 10px;
+}
+.sidebarContainer a {
+  text-decoration: none;
+}
+.title {
+  color: #5bb5a2;
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: -0.03em;
+  font-family: var(--font-dmSans);
+  padding: 6px;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin: 6px;
+  flex-direction: column;
+}
