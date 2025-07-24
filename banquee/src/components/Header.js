@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
+import OpenAccountButton from "./common/OpenAccountButton";
 
 const Header = () => {
   const pathName = usePathname();
@@ -71,7 +72,7 @@ const Header = () => {
           </div>
           <div className={styles.navRight}>
             <button className={styles.login}>Login</button>
-            <button className={styles.openAccount}>Open Account</button>
+            <OpenAccountButton />
           </div>
         </div>
       )}
