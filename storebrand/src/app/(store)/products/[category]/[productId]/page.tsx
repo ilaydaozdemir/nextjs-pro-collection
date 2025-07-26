@@ -28,14 +28,26 @@ export default function ProductPage({
     };
     fetchParams();
   }, [params]);
+
+  if (!product) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 py-12 flex items-center justify-center min-h-[60vh]">
+        <div className="flex flex-col items-center animate-pulse">
+          <div className="rounded-full bg-gray-200 size-12 mb-4"></div>
+          <div className="rounded h-4 bg-gray-200 w-24 mb-6"></div>
+          <div className="rounded h-2 bg-gray-200 w-16 "></div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <div className="flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden shadow-lg">
         <div className="md:w-1/2 bg-gray-50 p-8 flex items-center justify-center relative">
           <div className="relative w-full h-[300px] md:h-[400px]">
             <Image
-              src="/images/product001.png"
-              alt="Product Image"
+              src={product?.image || "/images/placeholder.png"}
+              alt={product?.name || "Product Image"}
               fill
               priority
               sizes="(max-width:768px) 100vw,50vw"
@@ -46,11 +58,13 @@ export default function ProductPage({
         <div className="md:w-1/2 p-8 md:p-12 space-y-6">
           <div>
             <h1 className="text-3xl font-bold text-[#003d5b] mb-2">
-              Smartphone Pro X
+              {product.name}
             </h1>
-            <p className="text-xl font-semibold mb-4 text-[#d1495b]">$999</p>
+            <p className="text-xl font-semibold mb-4 text-[#d1495b]">
+              ${product.price}
+            </p>
             <p className="text-[#30638e] leading-relaxed">
-              A high-end smartphone with advanced camera and display technology.
+              {product.description}
             </p>
           </div>
           <div className="pt-6 border-t border-gray-100">
