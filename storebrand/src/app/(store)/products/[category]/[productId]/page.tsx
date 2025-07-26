@@ -1,7 +1,33 @@
+"use client";
+
+import { Product, productsList } from "@/app/data/products";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-export default function ProductPage() {
+export default function ProductPage({
+  params,
+}: {
+  params: Promise<{ category: string; productId: string }>;
+}) {
+  const [product, setProduct] = useState<Product | null>(null);
+  useEffect(() => {
+    const fetchParams = async () => {
+      const resolvedParams = await params;
+      const foundProduct = productsList.find(
+        (p) => p.id === resolvedParams.productId
+      );
+      if (
+        !foundProduct ||
+        foundProduct.category.toLocaleLowerCase() !==
+          resolvedParams.category.toLocaleLowerCase()
+      ) {
+        return;
+      }
+      setProduct(foundProduct);
+    };
+    fetchParams();
+  }, [params]);
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <div className="flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden shadow-lg">
