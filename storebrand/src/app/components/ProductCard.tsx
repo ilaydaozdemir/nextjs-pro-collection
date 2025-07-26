@@ -40,7 +40,7 @@ export default function ProductCard({
           </span>
           <div className="flex gap-2">
             <Link
-              href="/products/smartphones"
+              href={`/products/${categorySlug}/${product.id}`}
               style={{ backgroundColor: categoryColor }}
               className=" px-4 py-2 justify-center items-center rounded-full text-white text-sm font-medium"
             >
