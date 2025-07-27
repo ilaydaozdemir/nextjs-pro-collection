@@ -1,21 +1,70 @@
-Next.js 'i anlayalım..
-Rendering terimi, ben bir siteye girdiğim zaman o sitenin elementlerinin benım browserıma (sayfama)
-konulması işlemidir.
+# Next.js'i Anlayalım
 
-Next.js -> Server Side rendering
-        -> Client Side rendering
-Girdiğim sitenin serverda render olması daha sonrasında render olan sitenin benim bilgisayarıma yollanması işlemine
-Server Side Rendering denir.
-Girdiğim sitenin veya uygulamanın son kullanıcının bilgisayarında render olması işlemine
-Client Side Rendering denir.
+## 🧠 Rendering Nedir?
 
-Bir site Client'da render oluyorsa, ben o siteye girdiğim zaman bütün site ile ilgili
-javascriptler iniyor,benım browserıma (sayfama) indikten sonra bu javascripti işliyor ve html'e
-döndürüyor ve benim sayafama render ediyor. Yani ben gidiyorum sitenin server'ına javascript
-dosyasını alıyorum ve kendı browserımda o javascripti işliyor ve sayfayı karsıma render ediyor.
+**Rendering**, bir siteye girdiğimizde, o sitenin görsel ve yapısal öğelerinin (HTML, CSS, JS vb.) tarayıcımıza (browser) yerleştirilmesi işlemidir.
 
-Server Side rendering ise ben yine bu sitenin serverına gidiyorum, site kendi sunucusunda
-javascript dosyalarını işliyor html haline döndürüyor ve bana sadece o html'i getiriyor.
+---
 
-        
-        
+## ⚙️ Next.js Rendering Türleri
+
+Next.js iki temel rendering yöntemini destekler:
+
+- **Server Side Rendering (SSR)**
+- **Client Side Rendering (CSR)**
+
+---
+
+## 🔄 Server Side Rendering (SSR)
+
+Server Side Rendering (Sunucu Taraflı Render), kullanıcının tarayıcısına ulaşmadan önce, sayfanın sunucuda oluşturulup son haliyle istemciye (client) gönderilmesi sürecidir.
+
+**Özetle:**
+
+1. Kullanıcı siteye istek gönderir.
+2. Sunucu, JavaScript dosyalarını işler.
+3. HTML çıktısı oluşturulur.
+4. Bu HTML çıktısı kullanıcıya gönderilir.
+
+**Avantajları:**
+
+- İlk yüklemede daha hızlı içerik sunumu (SEO için iyi).
+- Tarayıcıda daha az işlem yapılır.
+
+---
+
+## 🌐 Client Side Rendering (CSR)
+
+Client Side Rendering (İstemci Taraflı Render), sayfanın tarayıcıda (kullanıcının bilgisayarında) render edilmesi işlemidir.
+
+**Özetle:**
+
+1. Kullanıcı siteye istek gönderir.
+2. Sunucudan JavaScript dosyaları indirilir.
+3. Tarayıcı bu dosyaları çalıştırarak sayfayı oluşturur.
+
+**Avantajları:**
+
+- Sayfalar arası geçişlerde daha hızlı deneyim.
+- Dinamik ve etkileşimli uygulamalarda esneklik.
+
+---
+
+## 📌 Karşılaştırma
+
+| Özellik                 | SSR (Server Side)     | CSR (Client Side)   |
+| ----------------------- | --------------------- | ------------------- |
+| İlk Yükleme Hızı        | Genellikle daha hızlı | Daha yavaş olabilir |
+| SEO Uyumluluğu          | Yüksek                | Düşük               |
+| Tarayıcıdaki Yük        | Az                    | Fazla               |
+| Etkileşimli Uygulamalar | Daha az esnek         | Daha esnek          |
+
+---
+
+## 📘 Not
+
+Next.js, sadece SSR ve CSR ile sınırlı değildir. Aynı zamanda **Static Site Generation (SSG)** ve **Incremental Static Regeneration (ISR)** gibi gelişmiş render yöntemlerini de destekler.
+
+---
+
+> **Kısaca:** SSR'de işlem sunucuda, CSR'de ise istemcide gerçekleşir. Hangi yöntemin kullanılacağı, projenin ihtiyaçlarına göre belirlenmelidir.
